@@ -1,12 +1,8 @@
-// ignore_for_file: dead_code, unused_import
-
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart'
-    show BuildContext, MaterialApp, StatelessWidget, Widget, runApp;
 import 'package:flutter/material.dart';
-
 import 'package:time_table/pages/home_page.dart';
 import 'package:time_table/pages/login_page.dart';
+import 'package:time_table/utils/routes.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,15 +10,20 @@ void main() {
 
 // ignore: use_key_in_widget_constructors
 class MyApp extends StatelessWidget {
+  get debugShowCheckedModeBanner => null;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       themeMode: ThemeMode.light,
-      theme: ThemeData(),
-      initialRoute: "/",
+      
+
+      debugShowCheckedModeBanner: false,
+      initialRoute: MyRoutes.homenRout,
       routes: {
         "/": (context) => const LoginPage(),
-        "/home": (context) => const HomePage(),
+        MyRoutes.homenRout: (context)=> const HomePage(),
+        MyRoutes.loginRouts: (context)=> const LoginPage(),
       },
     );
   }
