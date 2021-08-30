@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var scaffold = Scaffold(
-      appBar: AppBar(
+      appBar: AppBar( 
        
         title: const Text(" Student App",
         style: TextStyle(color: Colors.black),
@@ -19,10 +19,10 @@ class HomePage extends StatelessWidget {
       ),
     
         body: Center(
+        
           // ignore: avoid_unnecessary_containers
           child: Container(
-            // ignore: prefer_const_constructors
-            child: Text("Student App"),
+            child: const Text("Student App"),
           ),
         ),
         drawer: const MyDrawer(),

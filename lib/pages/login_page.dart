@@ -37,10 +37,13 @@ class _LoginPageState extends State<LoginPage> {
             key: _formkey,
             child: Column(   
               children: [
-                Image.asset(
-                  "assets/images/charusat.png",
-                  fit: BoxFit.cover,
-                     ),
+                Padding(
+                  padding: const EdgeInsets.all(35.0),
+                  child: Image.asset(
+                    "assets/images/charusat.png",
+                    fit: BoxFit.cover,
+                       ),
+                ),
                      const SizedBox(
                       height: 20.0,
                       child: Text("Welcome")
