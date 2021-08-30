@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:time_table/pages/home_page.dart';
 import 'package:time_table/pages/login_page.dart';
 import 'package:time_table/utils/routes.dart';
+import 'package:time_table/widgets/themes.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,15 +17,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       themeMode: ThemeMode.light,
-      theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
-        appBarTheme: const AppBarTheme(
-          color: Colors.white,
-          elevation: 0.0,
-          iconTheme: IconThemeData(color: Colors.black),
-          
-        )
-      ),
+      theme: MyTheme.lightTheme(context),
+      darkTheme: MyTheme.darkTheme(context),        
+        
 
       debugShowCheckedModeBanner: false,
       initialRoute: MyRoutes.homenRout,
