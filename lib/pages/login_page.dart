@@ -127,6 +127,40 @@ class _LoginPageState extends State<LoginPage> {
                        )
                      
                          ),
+                         Padding(
+                           padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
+                           child: Material(
+                      color: Colors.deepPurple,
+                      borderRadius:
+                              BorderRadius.circular(changeButton ? 20 : 8),
+                     child: InkWell(
+                       onTap: () => moveToSingupPage(context),
+                       child: AnimatedContainer(
+                           duration: const Duration(seconds: 1),
+                           width: changeButton ? 50 : 150,
+                           height: 40,
+                           
+                           alignment: Alignment.center,
+                           child:changeButton
+                           ?const Icon(
+                             Icons.done,
+                             color: Colors.white,
+                             ) 
+                             : const Text(
+                               "Sing Up",
+                               style: TextStyle(
+                                 color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18),
+                           ),
+                           
+                            
+                             
+                           ),
+                       )
+                     
+                           ),
+                         ),
                        
                       ],
                     
@@ -140,6 +174,17 @@ class _LoginPageState extends State<LoginPage> {
           ),
     );
   }
+
+  moveToSingupPage(BuildContext context) async {
+      if(_formkey.currentState!.validate()){
+      
+                          
+                          await Navigator.pushNamed(context, MyRoutes.singupRouts);
+                          setState((){
+                          changeButton = false;
+                          } );
+      }
+    }
 
 
 }

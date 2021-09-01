@@ -2,8 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:time_table/pages/home_page.dart';
 import 'package:time_table/pages/login_page.dart';
+import 'package:time_table/pages/singinup.dart';
+import 'package:time_table/pages/widgets/themes.dart';
 import 'package:time_table/utils/routes.dart';
-import 'package:time_table/widgets/themes.dart';
 
 void main() {
   runApp(MyApp());
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
       initialRoute: MyRoutes.homenRout,
       routes: {
         "/": (context) => const LoginPage(),
+        MyRoutes.singupRouts: (context)=> const SingupPage(),
         MyRoutes.homenRout: (context)=> const HomePage(),
         MyRoutes.loginRouts: (context)=> const LoginPage(),
       },
